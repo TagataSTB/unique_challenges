@@ -1,0 +1,222 @@
+/* ----------------------------------------------- 共通 */
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  color: #000000;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding-bottom: 0;
+
+}
+
+p {
+  line-height: 2.0em;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14px;
+
+}
+
+.section_title {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.section_title::after {
+  /* 擬似要素はインライン要素のためブロック要素へ変更 */
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 16px 0 16px;
+  width: 100px;
+  border-bottom: solid 1px #000000;
+}
+
+
+/* ----------------------------------------------- ナビゲーションバー */
+.navbar {
+  background-color: #fafafa;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.my_navbar_brand,
+.my_nav_link {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000 !important;
+}
+
+/* Bootstrapのボタンに初期設定されている周囲のborderを消す */
+.navbar-toggler {
+  padding: 0 !important;
+  border: none;
+}
+
+/* ハンバーガーボタンがチェック状態であるとき、閉じるボタンを表示 */
+#hamburger_btn_check:checked~.hamburger_btn .btn_close {
+  display: block;
+}
+
+/* ハンバーガーボタンがチェック状態であるとき、ハンバーガーボタンを非表示 */
+#hamburger_btn_check:checked~.hamburger_btn .btn_open {
+  display: none;
+}
+
+/* 最初に表示した時は、閉じるボタンを非表示 */
+.btn_close {
+  display: none;
+}
+
+/* ハンバーガーボタンが押されているかを判断するためのチェックボックスは消す */
+#hamburger_btn_check {
+  display: none;
+}
+
+/* ----------------------------------------------- カールセル */
+
+.my_carousel_caption {
+  font-size: 52px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+  font-family: 'Lora', serif;
+  line-height: 1.5em;
+}
+
+
+.carousel-item {
+  height: 32rem;
+}
+
+/* carousel-item直下の子要素imgタグに設定 */
+.carousel-item>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+/* ----------------------------------------------- アバウト */
+
+/* aboutクラスの後に"私たちについて"の文字を追加 */
+.about::after {
+  content: "現状について";
+}
+
+.about_us_bg {
+  background-color: #c9e1ff;
+}
+
+
+
+/* ----------------------------------------------- メニュー */
+
+.recruit::after {
+  content: "アルバイト求人";
+  margin: 0 auto 0;
+}
+
+.recruit_title {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.recruit_price {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Lora', serif;
+}
+
+
+
+
+/* ----------------------------------------------- アクセス */
+
+.access::after {
+  content: "アクセス";
+  margin: 0 auto 0;
+}
+
+#access_bg {
+  padding: 20px;
+  background-color: #c9e1ff;
+}
+
+
+
+/* ----------------------------------------------- フッター */
+
+#footer {
+  background-color: #fafafa;
+}
+
+.copy_right {
+  font-size: 14px;
+  position: absolute;
+  bottom: 1rem;
+  left: 12px;
+  display: flex;
+}
+
+.copy_right>p {
+  margin-right: 5rem;
+  margin-bottom: 0;
+}
+
+.copy_right>img.sns_img {
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
+.restaurant_info p {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.restaurant_info img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  line-height: 1.5;
+  margin-top: auto;
+}
+
+.footer_brand_logo {
+  width: 64px;
+  height: 64px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.footer_text {
+  font-size: 24px;
+  font-family: 'Lora', serif;
+}
+
+/* スマートフォン画面幅でスタイル適用 */
+@media screen and (max-width: 991px) {
+  .footer_text,
+  .copy_right {
+    margin-top: 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .copy_right>p,img {
+    margin-right: 1rem;
+    font-size: 14px;
+    margin: 0;
+    line-height: 35px;
+  }
+}
